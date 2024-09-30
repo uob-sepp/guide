@@ -1,0 +1,49 @@
+name: LaTeX
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: "Build"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Clone repository"
+        uses: actions/checkout@v4
+
+      - name: "Compile LaTeX sources"
+        uses: xu-cheng/latex-action@3.2.0
+        with:
+          root_file: sepp.tex
+          args: -bibtex -pdf -latexoption=-file-line-error -latexoption=-interaction=nonstopmode -latexoption=-shell-escape -latexoption=-synctex=1
+
+      - name: Upload sepp.pdf
+        uses: actions/upload-artifact@v4
+        with:
+          name: sepp.pdf
+          path: sepp.pdf
+
+  deploy:
+    name: "Deploy"
+    runs-on: "ubuntu-latest"
+    if: ${{ github.ref == 'refs/heads/main' }}
+    needs:
+      - build
+
+    steps:
+      - name: Download sepp.pdf
+        uses: actions/download-artifact@v4
+        with:
+          name: "sepp.pdf"
+
+      - name: Deploy to Canvas
+        run: |
+          UPLOAD_URL=$(curl -X POST -H "Authorization: Bearer ${{ secrets.CANVAS_TOKEN }}" "https://canvas.bham.ac.uk/api/v1/courses/77855/files" -F "name=sepp.pdf" -F "parent_folder_id=3300998" | jq -r .upload_url)
+
+          curl "$UPLOAD_URL" \
+              -F 'filename=sepp.pdf' \
+              -F 'content_type=application/pdf' \
+              -F 'file=@sepp.pdf'
