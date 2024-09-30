@@ -1,0 +1,207 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% LaTeX sources for The Guide to Software Engineering & Professional Practice
+%% Michael B. Gale (m.gale@bham.ac.uk)
+%%
+%% This work is licensed under the Creative Commons
+%% Attribution-NonCommercial-NoDerivatives 4.0 International License. To
+%% view a copy of this license, visit
+%% http://creativecommons.org/licenses/by-nc-nd/4.0/ or send a letter to
+%% Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt,a4paper,twoside,fleqn]{report}
+
+\usepackage{geometry}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{fancyeq}
+\usepackage{fancyhdr}
+\usepackage[explicit]{titlesec}
+\usepackage{color}
+\usepackage{longtable}
+\usepackage{array, booktabs}
+\usepackage{colortbl}
+\usepackage{wrapfig}
+\usepackage{pgfplots}
+\usepackage[strict]{changepage}
+\usepackage{graphbox}
+\usepackage{prerex}
+\usepackage{forest}
+\usepackage{multicol}
+\usepackage{fontawesome}
+\usepackage{natbib}
+\usepackage{ccicons}
+
+% Minted -------------------------------
+
+\usepackage{minted}
+\usepackage[
+backgroundcolor = gray!5
+, hidealllines=true
+]{mdframed}
+
+\surroundwithmdframed{minted}
+\usemintedstyle{lovelace}
+
+\setminted[text]{fontsize=\small}
+\setminted[haskell]{fontsize=\small}
+\setminted[bash]{fontsize=\small}
+\newcommand{\haskellIn}[1]{\mintinline[fontsize=\small]{haskell}{#1}}
+\newcommand{\bashIn}[1]{\mintinline[fontsize=\small]{bash}{#1}}
+
+% Tikz -------------------------------
+
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+
+\tikzset{
+	treenode/.style = {align=center, inner sep=0pt, text centered,
+		font=\sffamily},
+	arn_n/.style = {treenode, circle, white, font=\sffamily\bfseries, draw=black,
+		fill=black, text width=1.5em},
+	arn_r/.style = {treenode, circle, red, draw=red,
+		text width=1.5em, very thick},
+	arn_x/.style = {treenode, circle, draw=white,
+		minimum width=1.5em, minimum height=1.5em},
+	cls/.style = { treenode, rectangle, red, draw=red,
+		text width=1.5em, very thick, minimum width=1.5em, minimum height=1.5em }
+}
+
+% UK English -------------------------------
+\usepackage[UKenglish]{babel}
+\usepackage[UKenglish]{isodate}
+
+% Hyperref -------------------------------
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=black,
+    citecolor=black,
+    unicode=false
+}
+
+% cleveref
+\usepackage[nameinlink]{cleveref}
+
+\crefname{figure}{figure}{figures} % cleveref by default has `fig.'
+\Crefname{figure}{Figure}{Figures}
+
+\crefname{section}{section}{sections} % cleveref by default has `fig.'
+\Crefname{section}{Section}{Sections}
+
+% Fonts -------------------------------
+\usepackage[]{FiraSans}
+
+% Palatino (font)
+\usepackage{mathpazo}
+\linespread{1.05}         % Palatino needs more leading (space between lines)
+\usepackage[T1]{fontenc}
+
+% some format settings
+% for hard-bound final submission, use:
+%\setlength{\oddsidemargin}{4.6mm}     % 30 mm left margin - 1 in
+% for soft-bound version and techreport, use instead:
+\setlength{\oddsidemargin}{-0.4mm}    % 25 mm left margin - 1 in
+\setlength{\evensidemargin}{-0.4mm}
+\setlength{\topmargin}{-5.4mm}        % 20 mm top margin - 1 in
+\setlength{\textwidth}{160mm}         % 20/25 mm right margin
+\setlength{\textheight}{237mm}        % 20 mm bottom margin
+\setlength{\headheight}{5mm}
+\setlength{\headsep}{5mm}
+\setlength{\parindent}{0mm}
+\setlength{\parskip}{\medskipamount}
+\renewcommand\baselinestretch{1.2} % thesis format (not needed for techreport)
+% don't let large figures hijack entire pages
+\renewcommand\topfraction{.9}
+\renewcommand\textfraction{.1}
+\renewcommand\floatpagefraction{.8}
+
+\usepackage[nomap]{FiraMono}
+
+\usepackage{microtype}
+\DisableLigatures[f]{encoding = *, family = tt* }
+
+\author{Michael B. Gale}
+
+
+\definecolor{gray75}{gray}{0.75}
+\newcommand{\hsp}{\hspace{20pt}}
+
+\titleformat{name=\chapter}[hang]{}{}{0cm}{%
+	\protect\thispagestyle{fancy}
+	\begin{center}
+		\large $\lambda$.\thechapter \\
+		\huge \textsc{#1}
+	\end{center}
+	%\chaptermark{\chapter}
+}
+\titleformat{name=\chapter,numberless}[hang]{}{}{0cm}{%
+	\begin{center}
+		\huge \textsc{#1}
+	\end{center}
+	%\chaptermark{\chapter}
+}
+
+%\titleformat{\subsection}{format}{label}{0em}{before-code}
+
+\titleformat{\section}
+	{\bfseries\large}
+	{\llap{\parbox{1.5cm}{\thesection\hfill}}#1}
+	{0em}
+	{\bfseries}
+
+\titleformat{\subsection}
+{\bfseries}{\llap{\parbox{1.5cm}{\thesubsection\hfill}}#1}{0em}{\bfseries}
+
+
+% misc. commands
+\newcounter{TaskCounter}
+
+\newcommand{\question}[1]{\vspace{-0.7cm}{\footnotesize \emph{#1}} \vspace{0.25cm}}
+\newcommand{\topics}[1]{\vspace{-0.5cm}{\footnotesize \emph{Topics}: #1} \vspace{0.25cm}}
+\newcommand{\task}[2][]{\indent\llap{\parbox{1.5cm}{\refstepcounter{TaskCounter}\label{#1}{\firamedium Ex\theTaskCounter}\hfill}}#2}
+\newcommand{\solution}[2]{\indent\llap{\parbox{1.5cm}{\textbf{Ex#1}\hfill}}#2}
+\newcommand{\taskLine}{\bigskip\hrule\bigskip}
+
+\AtBeginDocument{\addtocontents{toc}{\protect\thispagestyle{fancy}}}
+
+\begin{document}
+\fancypagestyle{empty}{\fancyhf{}}
+\pagestyle{empty}
+\pagenumbering{roman}
+
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\input{titlepage.tex}
+
+\cleardoublepage
+%\setcounter{page}{1}
+
+\fancyhf{}
+\fancyhead[LE, RO]{\emph{The Guide to Software Engineering \& Professional Practice}}
+\fancyhead[LO, RE]{\emph{Michael B. Gale}}
+
+\fancyfoot[LE,RO]{\thepage}
+\pagestyle{fancy}
+\thispagestyle{fancy}
+\newgeometry{
+	tmargin=2.5cm,
+	textwidth=155mm,
+	textheight=247mm,
+	headheight=5mm,
+	headsep=5mm,
+	inner=30mm
+}
+
+\tableofcontents
+
+
+\cleardoublepage
+\pagenumbering{arabic}
+
+\end{document}
