@@ -46,4 +46,4 @@ jobs:
           curl "$UPLOAD_URL" \
               -F 'filename=sepp.pdf' \
               -F 'content_type=application/pdf' \
-              -F 'file=@sepp.pdf'
+              -F 'file=@sepp.pdf' &> /dev/null
