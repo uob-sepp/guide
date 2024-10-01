@@ -60,3 +60,34 @@ To write this part, you should read through your chosen organisation's descripti
 
 \paragraph{Supporting material (2\%)} Link to any relevant material, such as documentation for tools, frameworks, etc. that you referred to while writing the EDR or that reviewers may wish to refer to in addition to what you wrote.
 
+\subsection{Suggested projects}
+\label{sec:edr-suggestions}
+
+For each of the available organisations, there are suggested projects that you could tackle with your EDR. You may also think of your own project to write an EDR for, but should ensure that it is comparable in scope to the suggestions. In particular, note that for the second coursework you will, as a group, \emph{prototype} one of your group members' EDRs. If in doubt about whether your own idea is suitable, feel free to ask.
+
+\subsubsection{\sshFullName}
+
+\begin{enumerate}
+    \item In some student houses, students use grocery delivery services to have groceries delivered to their house. To save on delivery fees, all participating students in the house may place orders together. This project is to extend \sshConsole\ and \sshApp\ with the ability to add items to a shared order for the next delivery. \sshShortName\ has partnered with several supermarkets that provide information about available products along with their current prices that can be searched and added to the order. Prices may change over time as promotions come and go or the base price of a product changes. The students should be able to view the items in the order at any time, including who added what, what the total cost is, and the total cost of all items for each individual member of the house is.
+
+    \item The \sshCamera\ can provide detailed information about the contents of the fridge, including quantities. This project is to extend \sshCloud\ with a recipe suggestion function that, using the data about available ingredients from an \sshCamera, and a database of recipes, suggests possible recipes using those ingredients. It may also suggest recipes for which most ingredients are available and only some need to be purchased.
+
+    \item The \sshCamera\ can also provide information about who is at home at any given point. Using occupancy trends over time that are available from data collected by the \sshCamera, this project is about adding a feature to the \ssh\ ecosystem that automatically suggests times during the week which may be convenient for a given student to clean their dishes or take out the bins because they are typically at home. Conversely, the system may suggest making use of the TV or a gaming console because all or most other members of the household are typically away.
+\end{enumerate}
+
+\subsubsection{\higherEdFullName}
+
+\begin{enumerate}
+    \item To produce good feedback for students, it is helpful to have \emph{custom feedback forms} for assessments that markers can fill in. Currently, markers are only given two inputs per student submission in \higherEdCSRS: a numeric input for the overall mark, and a free-form text field for feedback. This project is to design a feature that allows module organisers to specify custom feedback forms, which may comprise different sections corresponding to different aspects of the assignment:
+    \begin{itemize}
+        \item Instructions for each section.
+        \item For each component of the assignment, an input for a component mark.
+        \item Multiple free-form text fields for different aspects of the feedback.
+        \item The ability to label submissions with tags (e.g. ``1st \ssh\ project'') to allow markers to quickly filter all of their assigned submissions by a given tag.
+    \end{itemize}
+    Module organisers should have a convenient way to specify such custom feedback forms for each assignment, markers should then see the form for each submission that they can fill in, the data should be savable for each submission, and students should later see the feedback in the form.
+
+    \item For assessments in Computer Science (and some other sciences), there are steps which can be automated once a student has submitted some work. For example, for a programming assignment, compiling the code, running tests, and comparing the student's code to the skeleton code to see what changes have been made. Currently, markers for such assignments need to download the submission from \higherEdCSRS\ and perform all of these steps manually on their own machines. This project is to implement a feature which lets module organisers configure a sequence of steps that should be performed automatically once a student submits something. The results should then be made available to markers alongside the actual submission.
+
+    \item Student numbers have consistently been increasing for many years. This means that marking coursework for large modules typically requires several people to mark all submissions. For a module organiser to ensure that each marker is consistent is difficult, even with detailed mark schemes. This project is about trying to \emph{detect differences in marks across markers}, and \emph{suggest mitigations}. This may take place once all submissions have been marked and all students' marks are available along with the information about which marker marked which submission. Alternatively, it could take place sooner once there is enough data available. The detections made by this system may indicate that one or more markers are harsher than others, or more generous, allowing the module organiser to intervene. If useful, you may assume that you also have access to students' marks from previous assignments across different modules and years, as well as all other records about each student that are held by a university.
+\end{enumerate}
