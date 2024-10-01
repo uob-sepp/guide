@@ -1,0 +1,82 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% LaTeX sources for The Guide to Software Engineering & Professional Practice
+%% Michael B. Gale (m.gale@bham.ac.uk)
+%%
+%% This work is licensed under the Creative Commons
+%% Attribution-NonCommercial-NoDerivatives 4.0 International License. To
+%% view a copy of this license, visit
+%% http://creativecommons.org/licenses/by-nc-nd/4.0/ or send a letter to
+%% Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Timeline}
+\label{sec:timeline}
+
+This module is comprised of approximately 22 lectures and 3 pieces of coursework. This section contains a chronological schedule of all of these components. Note that the schedule may be subject to changes due to \emph{e.g.} staff illness or other unforeseen circumstances. Each lecture aims to answer a specific question, which is shown in the timeline. You can test your understanding by asking yourself that question after each lecture and checking that you can answer it.
+
+\newcommand{\foo}{\makebox[0pt]{\textbullet}\hskip-0.5pt\vrule width 1pt\hspace{\labelsep}}
+
+\newcommand{\LectureEntry}[4]{#1 & \begin{tabular}{p{11cm}}
+		\textbf{#2} \\[-0.15cm]
+		\emph{#3} \\
+		#4
+\end{tabular}}
+\newcommand{\LabEntry}[3]{#1 & \begin{tabular}{p{11cm}}
+		\textbf{#2} \\
+		#3
+\end{tabular}}
+
+\begingroup
+%\begin{table}
+\newcommand{\oldarraystrech}{\arraystretch}
+	\renewcommand\arraystretch{1.4}\vskip-1.5ex
+	\begin{longtable}{@{\,}r <{\hskip 2pt} !{\foo} >{\raggedright\arraybackslash}p{12cm}}
+		\addlinespace[1.5ex]
+		\LectureEntry{2 October}{Lecture 1: Introduction}{What is this module about?}{Module overview, different settings for software engineering} \\
+		\LectureEntry{2 October}{Lecture 2: Classic software engineering techniques}{What are traditional software engineering techniques?}{Waterfall, Spiral, Agile, Prototyping, UML, ...} \\
+
+		\LectureEntry{9 October}{Lecture 3: Technical overview of a software project}{How is a software project organised?}{Introductions to software architectures, code repositories, build tools, dependency management, continuous integration, deployments, ...} \\
+        \LectureEntry{9 October}{Lecture 4: How engineering teams work}{How do engineering teams work?}{Engineering design reviews (EDRs), Architecture Design Records (ADRs), units of work, Directly Responsible Individuals, retrospectives, ...} \\
+
+		\LectureEntry{16 October}{Lecture 5: The humans}{What are human aspects that engineers need to be aware of?}{Users, customers, sales teams, field teams, accessibility, internationalisation, ...} \\
+		\LectureEntry{16 October}{Lecture 6: Effective technical writing}{How can we communicate technical information effectively?}{Good style, common mistakes, examples of good and bad writing, ...} \\
+
+		\LectureEntry{23 October}{Lecture 7: Observability}{How do you know what's going on with your software?}{Logging, metrics, alerting, ...} \\
+		\LectureEntry{23 October}{Lecture 8: Data analytics for Software Engineers}{How can we use data to inform planning decisions and review impact?}{Where and why to leverage data, engineering with data, ...} \\
+
+        \hline
+		Week 5 & \begin{tabular}{p{13cm}}
+			\textbf{Deadline: Coursework I}
+		\end{tabular}\\
+		\hline
+
+		\LectureEntry{30 October}{Lecture 9: Stop calling it \texttt{\small \_Version14ReallyFinal.docx}}{How can we use version control effectively?}{Version control systems, Git basics, undoing things, ...} \\
+		\LectureEntry{30 October}{Lecture 10: Version control for teams}{How can teams leverage version control to collaborate?}{Common workflows, branches, merging, rebasing, conflicts, ...} \\
+
+		\LectureEntry{6 November}{Lecture 11: Build tools}{How is real software built?}{Build tools, automating builds, managing dependencies, build caching, reproducible builds, ...} \\
+		\LectureEntry{6 November}{Lecture 12: Continuous integration}{What is continuous integration and how does it help us?}{Continuous integration systems, examples, deployments, ...} \\
+
+		\LectureEntry{13 November}{Lecture 13: Basic testing}{What are some essential techniques for testing code?}{Testing frameworks, unit tests, integration tests, ...} \\
+		\LectureEntry{13 November}{Lecture 14: Not-so-basic testing}{What are some more sophisticated testing techniques?}{Property-based testing, proofs, mocking, designing implementations for testing, ...} \\
+
+		\LectureEntry{20 November}{Lecture 15: Containerisation}{What is containerisation and how is it useful?}{Docker-style containerisation, examples, ...} \\
+		\LectureEntry{20 November}{Lecture 16: Orchestration}{Given a bunch of containers and a bunch of servers, how do we run them?}{Kubernetes and friends.} \\
+
+		\LectureEntry{27 November}{Lecture 17: Threat modelling}{How do we incorporate security into the software engineering process?}{What is threat modelling, when to threat-model, different strategies, ...} \\
+		\LectureEntry{27 November}{Lecture 18: Supply-chain security}{How do we ensure none of our dependencies have security vulnerabilities?}{Vendoring dependencies, security aduits, vulnerability databases, automatic dependency updates, ...} \\
+
+		\LectureEntry{4 December}{Lecture 19: Static analysis}{How can we check source code for security vulnerabilities?}{What static analysis tools are, how they work, and examples of one in action.} \\
+		\LectureEntry{4 December}{Lecture 20: Generative AI as a tool}{Is generative AI going to replace all of us?}{Examples of how generative AI can assist in the software engineering process.} \\
+
+		\hline
+		Week 11 & \begin{tabular}{p{13cm}}
+			\textbf{Deadlines: Coursework II \& III}
+		\end{tabular}\\
+		\hline
+
+		\LectureEntry{11 December}{Lecture 21: Open-source}{What considerations are there for using or contributing to open-source projects?}{Licensing, contributing, benefits, ...} \\
+		\LectureEntry{11 December}{Lecture 22: Conclusions}{What have we learnt about software engineering?}{Summary of the module and other general information.} \\
+
+	\end{longtable}
+%\end{table}
+\endgroup
