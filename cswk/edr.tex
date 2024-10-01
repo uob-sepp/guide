@@ -25,3 +25,38 @@ Regardless of the process used, software engineers like you will be required to 
 Where there is a design space -- in other words, there are multiple different options for how a given feature could be implemented -- it makes sense to describe the approach that you think is best in a document for an Engineering Design Review (EDR) and compare it with other alternatives that you considered. The EDR is an opportunity for other engineers on your team or other teams who would be affected by your implementation to give you feedback on the proposed approach.
 
 Sometimes, EDRs can also be a means by which engineers can propose some feature that they think is worth working on. In that case, it is likely that engineering and product managers will also review the document to decide whether the feature is indeed worth allocating time for and fits in with the overall product direction.
+
+\subsection{Task}
+
+Choose one of the organisations introduced in \Cref{sec:organisations}. You will stick with this organisation for all assessments in this module.
+
+Your task for the first coursework is to write an Engineering Design Review (EDR) for one project in that organisation. See \Cref{sec:edr-suggestions} for guidance on projects.
+
+\subsection{Structure \& Assessment}
+
+Your EDR should be a document of roughly 5 pages that you submit as a PDF. The structure of your EDR should be as outlined below.
+
+For each section in the outlined structure below, a number in brackets indicates roughly how much of your EDR should be dedicated to that section, as a percentage. Your EDR will be marked on the \emph{technical content} as well as the \emph{quality of the technical writing}. In marking each part of your EDR, equal weight is given to the quality of the technical content and how well it is communicated to the intended audiences. For your feedback, you will get a mark for each section, as well as overall suggestions for how the EDR could be improved.
+
+\paragraph{Introduction (20\%)} Establish what problem your EDR is addressing, how the EDR relates to existing systems in the organisation, and why solving the problem should matter to the organisation.
+
+To write this part, you should read through your chosen organisation's description in \Cref{sec:organisations} and think about the goals of your chosen organisation as well as how the products described may be broken down further into smaller systems. You may make any reasonable, technical assumptions about how the products work internally. Indeed, part of your work here is to think about how the described products may work.
+
+\paragraph{Goals and non-goals (2\%)} Using quantifiable metrics, list what the design proposed by your EDR aims to accomplish and what it explicitly does not aim to accomplish. In particular, think about what ``success'' means for the project and how it can be measured.
+
+\paragraph{Design overview (30\%)} Describe your chosen design in sufficient technical detail that other engineers can decide whether the design is sensible and the best option for the problem at hand. You do not need to describe every little aspect of the implementation, but just enough to communicate how you suggest solving the problem at hand in a way that other software engineers can understand and review.
+
+\paragraph{Alternatives (20\%)} Give a brief overview of other design options that you considered. Discuss their advantages and disadvantages compared to the design you chose. Most problems have many possible solutions. You do not need to describe every possible solution, just some other ones that could reasonably chosen but you rule out for the reasons given. If you truly think that there is no alternative to the design you proposed, you should explain why that is the case.
+
+\paragraph{Milestones (10\%)} Propose a plan for how work on the design will proceed if the EDR is accepted (in other words, if other engineers think it is a reasonable design and managers allocate time to work on it). Typically, most projects are broken down into a few, numbered milestones that allow for evaluation at each step once they have been reached to determine whether work should proceed on subsequent milestones. This should cover different phases of implementation, testing, and deployment.
+
+\paragraph{Dependencies (4\%)} List which other teams in your organisation are affected by the changes proposed in your design. Since your chosen organisation does not really exist, you should make reasonable assumptions about how your chosen organisation may be organised into different engineering teams that are responsible for different aspects of the products.
+
+\paragraph{Cost (2\%)} Ignoring staffing costs for the project, would the proposed design affect the upkeep of the system for the business or make the product more expensive? For example, are you anticipating changed server hardware requirements or cloud resources?
+
+\paragraph{Privacy and security concerns (5\%)} Think about whether your design involves collecting any new personal data, or processes existing personal data in a new way that users may not have consented to. If so, discuss this here, how the data will be handled, and what permissions must be obtained from users. Additionally, discuss any security concerns that may apply to the design.
+
+\paragraph{Risks (5\%)} In a table, describe the main risks of your design, the impact that they would have, and any mitigations that already exist or you propose.
+
+\paragraph{Supporting material (2\%)} Link to any relevant material, such as documentation for tools, frameworks, etc. that you referred to while writing the EDR or that reviewers may wish to refer to in addition to what you wrote.
+
