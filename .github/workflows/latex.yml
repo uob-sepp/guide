@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   build:
@@ -29,7 +32,7 @@ jobs:
   deploy:
     name: "Deploy"
     runs-on: "ubuntu-latest"
-    if: ${{ github.ref == 'refs/heads/main' }}
+    if: github.event == 'push' && github.ref == 'refs/heads/main'
     needs:
       - build
 
