@@ -16,9 +16,15 @@ Once an Engineering Design Review document has been reviewed by all interested p
 
 \subsection{Task}
 
-Form a group with 3-4 members, ensuring that everyone in the group wrote an EDR in the context of the same organisation for the first coursework. Then choose one of your team's EDRs from the first coursework and implement a prototype for it. The emphasis here is solely on demonstrating that the design proposed in the EDR is viable and you should only build what is necessary for that purpose.
+Form a group with 3-4 members, ensuring that everyone in the group wrote an EDR in the context of the same organisation for the first coursework. Register your group using the process described in
 
-You may use any programming language, libraries, tools, etc. that you want for this. However, you should make use of software development techniques that have been covered in the module. This should include version control, appropriate workflows for a team, testing, build tools, dependencies on existing libraries where useful, continuous integration, etc. You can read the assessment criteria below for more information on what is expected.
+\begin{center}
+    \url{https://github.com/uob-sepp/groups-2024#adding-your-group}
+\end{center}
+
+Then choose one of your team's EDRs from the first coursework and implement a \emph{prototype} for it. The emphasis here is solely on demonstrating that the design proposed in the EDR is viable and you should \emph{only build what is necessary} for that purpose. Prototyping is a form of risk mitigation: rather than implementing a design for a feature in full, you just implement the most fundamental aspect of it.
+
+You may use any programming language, libraries, tools, etc. that you want for this. However, you should make use of software development techniques that have been covered in the module. This should include version control, appropriate workflows for working as a team, testing, build tools, dependencies on existing libraries where useful, continuous integration, etc. You can read the assessment criteria below for more information on what is expected.
 
 The design proposed in your EDR forms part of a larger system, which does not really exist, and you are not expected to build all the systems your design depends on. Instead, you should ``simulate'' other parts of the overall system to the extent that your design depends on in whatever way is most convenient. This may be accomplished by, for example, hard-coding values received from other systems or parts of the same system, building extremely simple versions of other systems that just return test data, randomly generating data, replacing networking with direct user input, terminal output instead of network responses, and so on. If you are not sure how to simulate a part of the overall system that you need, feel free to ask for suggestions!
 
@@ -28,7 +34,104 @@ Every group of engineers works differently and different engineers bring differe
 
 \subsection{Submission}
 
-Your submission should include an archive of your code repository, including its full history. It should also include a short report that briefly summarises (no more than 200 words) what was accomplished and discusses in detail how it was accomplished (no more than 800 words). This report may include any supporting material that demonstrates the software engineering techniques you employed that is not already included as part of the archive of your code repository. For example, screenshots of key issues demonstrating how you planned and provided updates on work.
+Your submission should include an archive of your code repository, including its \emph{full history}. It should also include a short report that briefly summarises (no more than 200 words) what was accomplished and discusses in detail how it was accomplished (no more than 800 words). This report may include any supporting material that demonstrates the software engineering techniques you employed that is not already included as part of the archive of your code repository. For example, screenshots of issues demonstrating how you planned and provided updates on work.
 
-Furthermore, each member of the group should \emph{individually} write around half a page of \emph{reflections} on every other group member. The reflections should be \emph{constructive} in nature and you should be happy to share them with the individual they are about. Assume that, rather than being students at a university, you are colleagues at a workplace and that the end of the module or group project is not the end of your working relationship. What would you suggest to your ``colleague'' so that working with them will continue to be productive in the future or become productive? You can read more about what reflections are in the specification for the third coursework.
+Furthermore, each member of the group should \emph{individually} write around half a page (roughly 250 words) of \emph{reflections} on every other group member. The reflections should be \emph{constructive} in nature and you should be happy to share them with the individual they are about. Assume that, rather than being students at a university, you are colleagues at a workplace and that the end of the module or group project is not the end of your working relationship. What would you suggest to your ``colleague'' so that working with them will continue to be productive in the future or become productive? You can read more about what reflections are in the specification for the third coursework.
 
+For example, for a group with three members (Students A, B, and C), you would have a report comprised of:
+
+\begin{itemize}
+    \item 200 word summary of which EDR was chosen, any changes made, and what was accomplished overall.
+    \item 800 word report on how the prototype was accomplished, with an emphasis on demonstrating aspects of the group work that aren't reflected in the code repository.
+    \item Student A
+    \begin{itemize}
+        \item 250 words of reflections about Student B
+        \item 250 words of reflections about Student C
+    \end{itemize}
+    \item Student B
+    \begin{itemize}
+        \item 250 words of reflections about Student A
+        \item 250 words of reflections about Student C
+    \end{itemize}
+    \item Student C
+    \begin{itemize}
+        \item 250 words of reflections about Student A
+        \item 250 words of reflections about Student B
+    \end{itemize}
+\end{itemize}
+
+\subsection{Assessment}
+
+There are two primary learning objectives against which your group's submission will be assessed against:
+
+\begin{enumerate}
+    \item The implementation of the prototype: has your team successfully implemented a prototype of the chosen design? How did you evaluate whether the prototype demonstrates that the design is viable? If you determined that the design is not viable, were you able to adjust the design and prototype? What is the overall technical accomplishment?
+    \item Software engineering techniques: how well has your team applied software engineering techniques? This includes both processes for working as a team (planning, breaking down work, reporting on the progress, etc.) and the application of technical skills (version control, build automation, dependency management, continuous integration and deployment, testing, etc.)
+\end{enumerate}
+
+The following sections contain indicative mark schemes for the different aspects of this assignment. This should be viewed only as a guide for you to understand what we are looking for, and we may award marks differently to how it is described here. Further, students in the same group are not guaranteed to get the same mark.
+
+\subsubsection{Project management (20\%)}
+
+At the start of your work on the prototype, you should decide how to break down the work and who should be responsible for which unit(s) of work. As work progresses, the responsible individuals should provide written updates on the work units. As work progressed, you may also identify additional work units. The following scale gives an indication, using examples, of what is expected for each range of marks:
+
+\begin{itemize}
+    \item \emph{7-8 marks} Exemplary use of planning to break down the work into work units. Members of the group provided meaningful updates on the work units, including any changes in approach, results of evaluations, etc. as appropriate. Changes to plans are well addressed and communicated.
+    \item \emph{5-6 marks} Planning with separate issues for different units of work, possibly broken down further as necessary, with good descriptions of the work needed and well communicated updates from responsible individuals.
+    \item \emph{3-4 marks} Basic planning, with separate issues for different units of work, which may contain reasonable descriptions of the work and may have updates from the responsible individuals as work progressed.
+    \item \emph{1-2 marks} Extremely basic planning, such as a basic list of tasks that needed to be done.
+    \item \emph{0 marks} No evidence of work planning.
+\end{itemize}
+
+\subsubsection{Software Engineering Techniques (40\%)}
+
+This assesses your group's use of technical software engineering techniques. This includes, but is not limited to:
+
+\begin{itemize}
+    \item Version control
+    \item Build automation
+    \item Dependency management
+    \item Testing
+    \item Continuous integration
+    \item Continuous deployment
+    \item Containerisation
+    \item Observability
+\end{itemize}
+
+The following scale gives an indication, using examples, of what is expected for each range of marks:
+
+\begin{itemize}
+    \item \emph{15-16 marks} Exemplary use of all applicable, technical software engineering techniques. All techniques are executed to the highest standard.
+    \item \emph{13-14 marks} Exemplary use of software engineering techniques, covering many of the applicable techniques to a high standard.
+    \item \emph{11-12 marks} Exemplary use of software engineering techniques, covering multiple of the applicable techniques to a good standard.
+    \item \emph{9-10 marks} Evidence of intermediate-level software engineering techniques, such as good usage of version control, build automation, dependency management, and custom continuous integration workflows.
+    \item \emph{7-8 marks} Evidence of intermediate-level software engineering techniques, such as good usage of version control, build automation, dependency management, and custom continuous integration workflows.
+    \item \emph{5-6 marks} Minimal evidence of intermediate software engineering techniques, such as version control with branch protection rules, build automation, and off-the-shelf continuous integration workflow(s), etc.
+    \item \emph{3-4 marks} Evidence of basic software engineering techniques used, such as a version control repository with an appropriate branching strategy and build automation.
+    \item \emph{1-2 marks} Minimal evidence of basic software engineering techniques used, such as only a version control repository with \emph{e.g.} one branch.
+    \item \emph{0 marks} No evidence of any technical software engineering techniques.
+\end{itemize}
+
+\subsubsection{Technical Accomplishment (40\%)}
+
+This assesses your group's overall technical accomplishment. The following scale gives an indication, using examples, of what is expected for each range of marks:
+
+\begin{itemize}
+    \item \emph{15-16 marks} Your prototype is an exemplary proof-of-concept for your chosen EDR, which in itself provided a challenge for a group your size. The prototype makes use of libraries where appropriate, interfaces with other systems are well designed, the implementation is engineered with testing in mind, and there is evidence of independent learning evident in the implementation. Issues with the design were overcome and the prototype is thoroughly evaluated.
+    \item \emph{13-14 marks} As above, except lacking in one or two areas.
+    \item \emph{11-12 marks} A well engineered and evaluated prototype in itself that possibly lacks consideration of the other systems it would need to interact with or that does not present a particular challenge for a group of your size.
+    \item \emph{9-10 marks} A basic prototype that successfully implements the design and has been evaluated reasonably. The prototype does not present a particular challenge for a group of your size and is not designed with other systems in mind.
+    \item \emph{7-8 marks} A basic prototype that successfully implements the design. The prototype is not evaluated well, does not present a particular challenge for a group of your size, and is not designed with other systems in mind.
+    \item \emph{5-6 marks} Evidence that prototyping the EDR was attempted, with minimal results.
+    \item \emph{3-4 marks} Some evidence that prototyping the EDR was attempted, but with no meaningful results.
+    \item \emph{1-2 marks} Minimal evidence of any technical work. Possibly no evidence of any technical work specific to the EDR's design.
+    \item \emph{0 marks} Nothing was accomplished.
+\end{itemize}
+
+\section{Questions and Answers}
+
+You can find a document with previously asked questions and their answers at:
+
+\begin{center}
+    \url{https://github.com/uob-sepp/website/blob/main/Prototype.md}
+\end{center}
